@@ -69,7 +69,7 @@ function initMap(){
       data = getAllBins(location.origin+"/get").then((allBins) => {
         localStorage.setItem('mapData', JSON.stringify(allBins));
         console.log('data updated to LS');
-        initMap();
+        // initMap();
         
       })
     }, 3000);

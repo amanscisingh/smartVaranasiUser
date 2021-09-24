@@ -5,8 +5,7 @@
             <a style="text-decoration: none;" href="#" onclick="signOut();">LOGOUT</a>
             </span>
     </div>
-    <div class="profileContainer">
-        <div class="middle-section">
+    <div class="middle-section">
         <img src="{{user.image}}" alt="{{user.firstName}}" id="profileImage" />
         <span style="margin: auto;">{{user.firstName}} | {{user.designation}}</span>
     </div>
@@ -21,8 +20,26 @@
             <input style="margin-top: 10px;" type="submit" value="Update">
         </form>
     </div>
+</div>
+<hr>
+
+
+<div id="queries">
+    <span style="text-align: center; width:100%">👇My Recents Reports👇</span>
+    {{#each data}}
+    <div class="card">
+        <div class="container1">
+            <br>
+            <p> <span style="color: white; background-color: black; padding: 3px;  font-size:0.9rem;">My Query :</span>  {{ this.report.description }} </p>
+            <p> <span style="color: white; background-color: black; padding: 3px; font-size:0.9rem;">Response :</span>  {{ this.response.description }} </p>
+            <h6>
+                <span style="right: 0;"> {{formatDate this.createdAt 'MMMM Do YYYY, h:mm:ss a'}} </span>
+            </h6>
+        </div>
+            
     </div>
-    
+
+    {{/each}}
 </div>
 
 

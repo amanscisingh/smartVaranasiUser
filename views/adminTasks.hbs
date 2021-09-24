@@ -31,10 +31,10 @@
 
 
 <span style="float: left;">
-    <a href="/admin/broadcast" style="text-decoration: none; float: right; margin: 10px; padding: 5px; border: black 1px solid; border-radius: 5px;">Create Broadcast</a>
+    <a href="/admin/broadcast" style="text-decoration: none; float: right; margin: 10px; padding: 5px; border: black 1px solid;">Create Broadcast</a>
 </span>
 <span style="float: right;">
-    <a href="/admin/response" style="text-decoration: none; float: right; margin: 10px; padding: 5px; border: black 1px solid; border-radius: 5px">Respond To Queries</a>
+    <a href="/admin/response" style="text-decoration: none; float: right; margin: 10px; padding: 5px; border: black 1px solid;">Respond To Queries</a>
 </span>
 <br>
 <h3>Assign Tasks to Employees</h3>
@@ -63,7 +63,6 @@
         <input id="submitBtn" disabled type="submit" value="Assign Task👍">        
     </form>
     <hr id="shadowedLine">
-    <p id="loading">Please wait While the analytics Panel is Loading...</p>
 
     <div class="canvasElement"><canvas id="myChart" width="100%" height="80%"></canvas></div>
     <br>
@@ -82,7 +81,6 @@
 
 {{!-- script starts here --}}
 <script>
-    const loading = document.getElementById('loading');
     response = ['Bhelupur', 'Dashaswamedh', 'Varunapar', 'Adampur', 'Kotwali'];
     ele=document.getElementById("zone");
     for (let i = 0; i < response.length; i++) {
@@ -154,10 +152,10 @@
     }
 
     {{!-- adding bar graph --}}
-    fetch('/api/EmployeeId').then(async(response)=>{
+    fetch('/api/EmployeeIds').then(async(response)=>{
         {{!-- console.log("ids") --}}
         response=await response.json();
-        console.log('resp',response)
+        {{!-- console.log(response) --}}
         labels=new Set();
         res_ids=new Set();
         data_incomplete=new Array();
@@ -167,10 +165,10 @@
         zones = ['Bhelupur', 'Dashaswamedh', 'Varunapar', 'Adampur', 'Kotwali'];
         
         for(let i=0;i<response.length;i++){
-            res_ids.add(response[i]._id);
-            labels.add(response[i].firstName);
+            res_ids.add(response[i].employeeID);
+            labels.add(response[i].employeeName);
         }
-        console.log('ab',res_ids,labels)
+        {{!-- console.log(res_ids,labels) --}}
         for(let i=0;i<Array.from(res_ids).length;i++){
             fetch('/api/analyticsTasksData/'+Array.from(res_ids)[i]).then(async (res) => {
                 res = await res.json();
@@ -346,7 +344,6 @@
                 }
             },
         });
-        loading.style.display = "none";
         },5000);
     });
       

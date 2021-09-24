@@ -5,9 +5,22 @@
     <div class="task">
         <span style="float: left;"> {{indexing @key}}: {{this.taskName}}</span>
         <a href='/employee/tasks/{{@key}}/map/?t={{this.taskName}}'> <span style="float: right;">🎯</span></a> <br>
-        <p>{{this.taskArray}}</p>
-        <p>{{this.taskStatus}}</p>
+        <p> 👉 {{this.taskArray.length}} bins to Collect!!! </p>
+        <p class="taskStatus">{{this.taskStatus}}</p>
     </div>
     
 {{/each}}
 
+<script>
+    let statusValue = document.getElementsByClassName('taskStatus');
+    
+    for (let i = 0; i < statusValue.length; i++) {
+        if (statusValue[i].innerText === 'Completed') {
+            statusValue[i].style.backgroundColor = '#82ff81';
+            statusValue[i].style.padding = '7px'
+        } else {
+            statusValue[i].style.backgroundColor = '#ff4f4f';
+            statusValue[i].style.padding = '7px'
+        }
+    }
+</script>

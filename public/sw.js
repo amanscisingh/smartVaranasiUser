@@ -4,7 +4,7 @@ const itemsCached = [
     '/waste',
     '/traffic',
     '/pollution',
-    '/images/logo192.png',
+    '/images/logo192.png', 
     '/images/ADMIN.png',
     '/images/comingSoon.jpeg',
     '/images/empty.png',
@@ -15,40 +15,43 @@ const itemsCached = [
     '/images/WASTE.png',
     '/images/wastePoster.jpg',
     '/css/main.css'
-]
+] 
+
+
+
 
 
 
 // self.addEventListener('activate', function(event) {
-//     console.log('this event triggers when the service worker activates')
+//   console.log('this event triggers when the service worker activates')
 // })
 
 
 
 // self.addEventListener('install', function(event) {
 //     event.waitUntil(
-//         caches.open('c2')
+//       caches.open('c2')
 //         .then(function(e) {
-//             return e.addAll(itemsCached)
+//           return e.addAll(itemsCached)
 //         }).then(self.skipWaiting())
-
+        
 //     )
 // })
 
 
 // self.addEventListener('activate', function(event) {
-//     event.waitUntil(
-//         caches.keys()
-//         .then((keyList) => {
-//             return Promise.all(keyList.map((key) => {
-//                 if (key !== 'c2') {
-//                     console.log('[ServiceWorker] Removing old cache', key)
-//                     return caches.delete(key)
-//                 }
-//             }))
-//         })
-//         .then(() => self.clients.claim())
-//     )
+//   event.waitUntil(
+//     caches.keys()
+//       .then((keyList) => {
+//         return Promise.all(keyList.map((key) => {
+//           if (key !== 'c2') {
+//             console.log('[ServiceWorker] Removing old cache', key)
+//             return caches.delete(key)
+//           }
+//         }))
+//       })
+//       .then(() => self.clients.claim())
+//   )
 // })
 
 
@@ -60,3 +63,4 @@ const itemsCached = [
 //     })
 //   )
 // })
+

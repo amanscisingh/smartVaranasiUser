@@ -123,6 +123,10 @@ form.setAttribute('action', action);
 const submitbtn = document.createElement('input');
 submitbtn.setAttribute('type', 'submit');
 submitbtn.setAttribute('value', 'Task Done');
+submitbtn.style.color="black";
+submitbtn.style.backgroundColor="#82ff81";
+submitbtn.style.border="1px solid black";
+submitbtn.style.cursor="alias";
 
 const hiddenmethodOverride = document.createElement('input');
 hiddenmethodOverride.setAttribute('type', 'hidden');

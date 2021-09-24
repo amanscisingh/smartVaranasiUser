@@ -4,22 +4,21 @@ import Bin from '../model/bin-schema.js';
 import Tasks from '../model/tasks.js'
 import QueryData from '../model/query-data.js'
 import Broadcasts from '../model/broadcasts.js'
-import Users from '../model/user.js'
 
 // get wards on input of zone
-apiRoute.get('/zone/:zone', async(req, res) => {
+apiRoute.get('/zone/:zone', async (req, res) => {
     const zone = req.params.zone;
     const data = await Bin.find({ Zone: zone.toString() });
     var s = new Set();
     for (let i = 0; i < data.length; i++) {
         s.add(data[i].Ward);
     };
-
-
+    
+    
     res.json(Array.from(s));
 });
 // get all zones
-apiRoute.get('/zone', async(req, res) => {
+apiRoute.get('/zone', async (req, res) => {
     const zone = req.params.zone;
     const data = await Bin.find();
     var s = new Set();
@@ -30,32 +29,27 @@ apiRoute.get('/zone', async(req, res) => {
 });
 
 // get LOCALITY on input of ward
-apiRoute.get('/ward/:ward', async(req, res) => {
+apiRoute.get('/ward/:ward', async (req, res) => {
     const ward = req.params.ward;
     const data = await Bin.find({ Ward: ward.toString() });
     var s = new Set();
     for (let i = 0; i < data.length; i++) {
         s.add(data[i].LOCALITY);
     };
-
-
+    
+    
     res.json(Array.from(s));
 });
 // get all employee id's
-apiRoute.get('/allTasks', async(req, res) => {
-    var employeeIds = await Tasks.find().lean();
+apiRoute.get('/allTasks', async(req,res)=>{
+    var employeeIds=await Tasks.find().lean();
     res.json(employeeIds);
 })
 
-// get all employeeId
-apiRoute.get('/EmployeeID', async(req, res) => {
-    var employeeId = await Users.find({ designation: 'Employee' });
-    res.json(employeeId);
-})
 
 
 // get data of employees for analytics an dgraph plotting
-apiRoute.get('/analyticsTasksData/:EmployeeID', async(req, res) => {
+apiRoute.get('/analyticsTasksData/:EmployeeID', async (req, res) => {
     const EmployeeID = req.params.EmployeeID;
     var allData = await Tasks.find({ employeeID: EmployeeID.toString() }).lean();
     var incompleteTasks = 0
@@ -66,7 +60,7 @@ apiRoute.get('/analyticsTasksData/:EmployeeID', async(req, res) => {
         } else {
             completedTasks++
         }
-
+        
     }
     res.json({
         "incompleteTasks": incompleteTasks,
@@ -77,7 +71,7 @@ apiRoute.get('/analyticsTasksData/:EmployeeID', async(req, res) => {
 
 
 // get data of queries and responses
-apiRoute.get('/analyticsQueryData', async(req, res) => {
+apiRoute.get('/analyticsQueryData', async (req, res) => {
     var allData = await QueryData.find().lean();
     var totalQueries = allData.length
     var resolvedQueries = 0
@@ -85,7 +79,7 @@ apiRoute.get('/analyticsQueryData', async(req, res) => {
         if (allData[i].response.description == "No response") {
             resolvedQueries++
         }
-
+        
     }
     res.json({
         "totalQueries": totalQueries,
@@ -95,7 +89,7 @@ apiRoute.get('/analyticsQueryData', async(req, res) => {
 
 
 // get data of bins by zones
-apiRoute.get('/analyticsBinData', async(req, res) => {
+apiRoute.get('/analyticsBinData', async (req, res) => {
     try {
         var zones = ['Bhelupur', 'Dashaswamedh', 'Varunapar', 'Adampur', 'Kotwali'];
         var response = {
@@ -124,9 +118,9 @@ apiRoute.get('/analyticsBinData', async(req, res) => {
 
         for (let i = 0; i < data.length; i++) {
             if (data[i].Status == "filled") {
-                response[data[i].Zone]['filled']++
+                response[data[i].Zone]['filled'] ++
             } else {
-                response[data[i].Zone]['empty']++
+                response[data[i].Zone]['empty'] ++
             }
         };
 
@@ -139,11 +133,11 @@ apiRoute.get('/analyticsBinData', async(req, res) => {
 
 
 // get top 3 broadcasts..
-apiRoute.get('/topBroadcasts', async(req, res) => {
+apiRoute.get('/topBroadcasts', async (req, res) => {
     try {
         var data = await Broadcasts.find().lean();
         res.json(data.slice(-3));
-
+        
     } catch (error) {
         console.log(error);
         res.redirect('/');

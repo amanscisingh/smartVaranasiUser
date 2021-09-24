@@ -10,13 +10,11 @@ body {
 }
 
 ::-webkit-scrollbar {
-    width: 0;
-    /* Remove scrollbar space */
-    background: transparent;
-    /* Optional: just make scrollbar invisible */
-}
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+  }
 
-h2 {
+h2{
     margin: 0;
 }
 
@@ -27,46 +25,50 @@ h4 {
     padding: 3px;
 }
 
-a {
+a{
     color: black;
     text-decoration: none;
 }
 
-.big-container {
+.big-container{
     width: 100%;
     margin: 0;
     padding: 0;
     height: 100%;
 }
 
-.container {
+.container{
     height: 90%;
     background-color: white;
     background-position: center;
     background-size: cover;
     background-blend-mode: darken;
+    overflow-y: scroll;
+    
 }
 
-.control1 {
+
+
+.control1{
     display: grid;
     height: 9%;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr ;
     width: 100%;
     justify-items: center;
 }
 
-.control-element {
+.control-element{
     border-radius: 10px;
     height: 70px;
     width: 70px;
 }
 
-.control-element a {
+.control-element a{
     margin: 0;
     padding: 0;
 }
 
-img {
+img{
     width: 100%;
     height: 100%;
 }
@@ -78,18 +80,16 @@ img {
 }
 
 
-/* css for map - aman singh */
 
-#map {
+/* css for map - aman singh */ 
+#map{
     height: 83%;
     width: 100%;
     /* border: yellow 1px solid; */
     z-index: 100;
 }
 
-
 /* css for selectedBin - satakshi pal */
-
 .user-control {
     height: 15.5%;
     width: 100%;
@@ -97,15 +97,15 @@ img {
     text-align: center;
 }
 
-.center {
+.center{
     text-align: center;
     margin-left: 10px;
     height: 55%;
     overflow: auto;
+    
     /* background-color: green; */
     padding: 20px;
 }
-
 .btn {
     color: black;
     font-size: large;
@@ -116,8 +116,7 @@ img {
     height: 32px;
     width: 70px;
 }
-
-#submit {
+#submit{
     color: black;
     font-size: large;
     margin: 9px;
@@ -127,34 +126,34 @@ img {
     width: 140px;
 }
 
-#bin-info {
+#bin-info{
     text-align: center;
     padding: 10px;
     /* background-color: blueviolet; */
 }
-
-.imgs {
+.imgs{
     text-align: center;
     padding: 10px;
     margin-top: 5px;
 }
-
-#form {
+#form{
     text-align: left;
     /* padding: 20px; */
     /* background-color: aliceblue; */
 }
 
-.report {
+.report{
     padding: 10px;
     font-size: large;
     margin: 3px;
 }
 
-.binImages {
+
+.binImages{
     width: 70px;
     height: 70px;
 }
+
 
 .btn1 {
     color: black;
@@ -167,34 +166,43 @@ img {
 }
 
 
-/* for qrcode */
 
+
+
+/* for qrcode */
 #qr-scanner {
     height: 80%;
     width: 100%;
     z-index: 1000;
+
 }
 
 
-/* css for intro.hbs */
 
-.logInBtn {
+
+
+/* css for intro.hbs */
+.logInBtn{
     width: 100%;
     height: 20%;
     margin: auto
 }
 
 
-/* for user profile page */
 
-#user {
+
+
+
+
+/* for user profile page */
+#user{
     height: 55%;
     width: 100%;
     margin: 0;
     padding: 0;
 }
 
-#profileImage {
+#profileImage{
     height: 80%;
     width: 40%;
     margin: auto;
@@ -202,7 +210,7 @@ img {
     border-radius: 100%;
 }
 
-.top-section {
+.top-section{
     height: 28px;
     width: 100%;
     padding-top: 5px;
@@ -210,56 +218,63 @@ img {
     color: tomato; */
 }
 
-.top-section span {
+.top-section span{
     margin: 2px;
 }
 
-.middle-section {
+.middle-section{
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 48%;
 }
 
-.bottom-section {
+.bottom-section{
     width: 100%;
     height: fit-content;
     margin-top: 5px;
     margin-bottom: 5px;
 }
 
-.bottom-section input {
-    margin: 3px;
-    padding: 5px;
+.bottom-section input{
+    margin: auto;
 }
 
-form {
+form{
     margin: 0 auto;
     text-align: center;
 }
 
-#queries {
+#queries{
     width: 100%;
     height: 42%;
     overflow-y: scroll;
     text-align: center;
 }
 
+.card{
+    border: 1px solid black;
+    margin: 25px;
+    border-radius: 1px;
+    box-shadow: 0 0 8px 2px black;
+    text-align: left;
+    padding-left: 10px;
+}
+
 
 /* css for home */
-
-#homeTop {
+#homeTop{
     width: 100%;
     height: 65%;
 }
 
-#homeBottom {
+#homeBottom{
     width: 100%;
-    height: 35%;
+    height: 25%;
     overflow: auto;
 }
 
-.comingSoonContainer {
+.comingSoonContainer{
     width: 100%;
     height: 100%;
     position: relative;
@@ -268,10 +283,8 @@ form {
     background-position: center;
 }
 
-
 /* coming soon css */
-
-.comingSoonText {
+.comingSoonText{
     width: 100%;
     height: 30%;
     background-color: #fafdff;
@@ -281,36 +294,17 @@ form {
 }
 
 
+
 /* animate image  */
 
 @keyframes shake {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(.97);
-    }
-    100% {
-        transform: scale(1);
-    }
+    0%   {transform: scale(1);}
+    50%  {transform: scale(.97);}
+    100% {transform: scale(1);}
 }
 
-#animateImg {
+#animateImg{
     animation-name: shake;
     animation-duration: 2s;
     animation-iteration-count: 10;
-}
-
-
-/* Admin panel css */
-
-.adminPanelBtn {
-    text-align: center;
-    margin-left: 38%;
-    margin-top: 35%;
-    border: 2px solid black;
-    width: 30%;
-    padding: 3px;
-    border-radius: 8px;
-    cursor: pointer;
 }
