@@ -17,7 +17,7 @@
 
 <script>
     const broadcastForm = document.getElementById('broadcastForm');
-    const url = '/admin/broadcast';
+    const url = '/admin/broadcast?id=' + localStorage.getItem('userId');
     broadcastForm.setAttribute('action', url);
     document.getElementById('sendBroadcast').style.visibility  = 'visible';
 </script>

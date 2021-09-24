@@ -23,11 +23,13 @@ router.post('/login', (req, res) => {
             // create a new user
             if (userData == null) {
                 let newUser = new Users({
+                    googleId: userid,
                     firstName: payload['given_name'],
                     lastName: payload['family_name'],
+                    displayName: payload['given_name'] + ' '+ payload['family_name'],
                     image: payload['picture'],
                     email: payload['email'],
-                    designation: "Employee"
+                    designation: "User"
                 });
                 await newUser.save();
             }
@@ -50,7 +52,7 @@ router.post('/login', (req, res) => {
 router.get('/logout', (req, res) => {
     console.log(req.cookies['session-token']);
     res.clearCookie('session-token');
-    res.send('successfol logout');
+    res.send('successful logout');
 })
 
 // getting the current user

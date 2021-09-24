@@ -33,6 +33,7 @@ wasteRoute.post('/:id', async (req, res) => {
         const report = req.body.report;
         const data = new Query({
             report: {
+                user : req.cookies['user-id'],
                 description: report
             },
             binId: id,

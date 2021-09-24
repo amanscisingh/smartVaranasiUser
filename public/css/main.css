@@ -43,7 +43,6 @@ a{
     background-position: center;
     background-size: cover;
     background-blend-mode: darken;
-    overflow-y: scroll;
     
 }
 
@@ -52,7 +51,7 @@ a{
 .control1{
     display: grid;
     height: 9%;
-    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     width: 100%;
     justify-items: center;
 }
@@ -260,6 +259,7 @@ form{
     text-align: left;
     padding-left: 10px;
 }
+
 
 
 /* css for home */

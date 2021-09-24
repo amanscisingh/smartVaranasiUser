@@ -10,7 +10,7 @@ employeeRoute.get('/tasks', async (req, res) => {
     const tasks = await Tasks.find( {employeeID: user['_id'] } ).lean();
     console.log(tasks);
 
-    res.render('employeeTasks', { layout: 'main' , tasks : tasks});
+    res.render('employeeTasks', { layout: 'adminLayout' , tasks : tasks});
 });
 
 

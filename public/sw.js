@@ -17,11 +17,6 @@ const itemsCached = [
     '/css/main.css'
 ] 
 
-
-
-
-
-
 // self.addEventListener('activate', function(event) {
 //   console.log('this event triggers when the service worker activates')
 // })
