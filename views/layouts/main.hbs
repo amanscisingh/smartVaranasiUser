@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="manifest" href="/javascript/manifest.webmanifest">
+    <meta name="theme-color" content="#95B6E2"/>
+    <title>Smart City Varanasi</title>
+    
+</head>
+<body>
+    <div class="big-container">
+        <div class="container" id="container">
+            {{{ body }}}
+        </div>
+        <hr style="margin: 0%; padding:0%">
+        <div class="control1">
+            
+            <div class="control-element"> <a href="/waste"> <img src="/images/WASTE.png" alt="Waste Logo"> </a> </div>
+            
+            {{!-- <div class="control-element"> <a href="/pollution"> <img src="/images/POLLUTION.png" alt="Pollution Logo"> </a> </div> --}}
+            
+            <div class="control-element"> <a href="/home"> <img src="/images/HOME.jpeg" alt="Home Logo"> </a> </div>
+            
+            {{!-- <div class="control-element"> <a href="/traffic"> <img src="/images/TRAFFIC.png" alt="Traffic Logo"> </a> </div> --}}
+            
+            <div class="control-element"> <a href="/profile" id="profileBtn"> <img src="/images/ADMIN.png" alt="Admin Logo"> </a> </div>
+        </div>
+    </div>
+
+    <script>
+        
+
+
+        // Service workers
+        document.addEventListener('DOMContentLoaded', init, false);
+        function init() {
+            console.log('ntng');
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('/sw.js')
+                .then((reg) => {
+                    console.log('Service worker registered -->', reg);
+                }, (err) => {
+                    console.error('Service worker not registered -->', err);
+                });
+            }
+        }
+
+    </script>
+
+    
+</body>
+</html>

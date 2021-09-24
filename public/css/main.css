@@ -1,0 +1,316 @@
+body {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    /* Remove scrollbar space */
+    background: transparent;
+    /* Optional: just make scrollbar invisible */
+}
+
+h2 {
+    margin: 0;
+}
+
+h4 {
+    margin: 0;
+    text-align: center;
+    background-color: darkcyan;
+    padding: 3px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.big-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.container {
+    height: 90%;
+    background-color: white;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: darken;
+}
+
+.control1 {
+    display: grid;
+    height: 9%;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    justify-items: center;
+}
+
+.control-element {
+    border-radius: 10px;
+    height: 70px;
+    width: 70px;
+}
+
+.control-element a {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.vl {
+    border-left: 1px solid #b1622e;
+    height: 80%;
+    margin-top: 6px;
+}
+
+
+/* css for map - aman singh */
+
+#map {
+    height: 83%;
+    width: 100%;
+    /* border: yellow 1px solid; */
+    z-index: 100;
+}
+
+
+/* css for selectedBin - satakshi pal */
+
+.user-control {
+    height: 15.5%;
+    width: 100%;
+    /* border: turquoise 1px solid; */
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+    margin-left: 10px;
+    height: 55%;
+    overflow: auto;
+    /* background-color: green; */
+    padding: 20px;
+}
+
+.btn {
+    color: black;
+    font-size: large;
+    margin: 10px;
+    padding: 5px;
+    cursor: pointer;
+    margin-top: 25px;
+    height: 32px;
+    width: 70px;
+}
+
+#submit {
+    color: black;
+    font-size: large;
+    margin: 9px;
+    padding: 5px;
+    cursor: pointer;
+    height: 32px;
+    width: 140px;
+}
+
+#bin-info {
+    text-align: center;
+    padding: 10px;
+    /* background-color: blueviolet; */
+}
+
+.imgs {
+    text-align: center;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+#form {
+    text-align: left;
+    /* padding: 20px; */
+    /* background-color: aliceblue; */
+}
+
+.report {
+    padding: 10px;
+    font-size: large;
+    margin: 3px;
+}
+
+.binImages {
+    width: 70px;
+    height: 70px;
+}
+
+.btn1 {
+    color: black;
+    font-size: large;
+    margin: 9px;
+    padding: 5px;
+    cursor: pointer;
+    height: 32px;
+    width: 140px;
+}
+
+
+/* for qrcode */
+
+#qr-scanner {
+    height: 80%;
+    width: 100%;
+    z-index: 1000;
+}
+
+
+/* css for intro.hbs */
+
+.logInBtn {
+    width: 100%;
+    height: 20%;
+    margin: auto
+}
+
+
+/* for user profile page */
+
+#user {
+    height: 55%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#profileImage {
+    height: 80%;
+    width: 40%;
+    margin: auto;
+    margin-top: 8px;
+    border-radius: 100%;
+}
+
+.top-section {
+    height: 28px;
+    width: 100%;
+    padding-top: 5px;
+    /* background-color: yellow;
+    color: tomato; */
+}
+
+.top-section span {
+    margin: 2px;
+}
+
+.middle-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 48%;
+}
+
+.bottom-section {
+    width: 100%;
+    height: fit-content;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.bottom-section input {
+    margin: 3px;
+    padding: 5px;
+}
+
+form {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#queries {
+    width: 100%;
+    height: 42%;
+    overflow-y: scroll;
+    text-align: center;
+}
+
+
+/* css for home */
+
+#homeTop {
+    width: 100%;
+    height: 65%;
+}
+
+#homeBottom {
+    width: 100%;
+    height: 35%;
+    overflow: auto;
+}
+
+.comingSoonContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-image: url('/images/comingSoon.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* coming soon css */
+
+.comingSoonText {
+    width: 100%;
+    height: 30%;
+    background-color: #fafdff;
+    text-align: center;
+    padding-top: 70px;
+    font-size: xxx-large;
+}
+
+
+/* animate image  */
+
+@keyframes shake {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(.97);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#animateImg {
+    animation-name: shake;
+    animation-duration: 2s;
+    animation-iteration-count: 10;
+}
+
+
+/* Admin panel css */
+
+.adminPanelBtn {
+    text-align: center;
+    margin-left: 38%;
+    margin-top: 35%;
+    border: 2px solid black;
+    width: 30%;
+    padding: 3px;
+    border-radius: 8px;
+    cursor: pointer;
+}

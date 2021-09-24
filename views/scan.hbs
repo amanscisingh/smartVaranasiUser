@@ -1,0 +1,30 @@
+<script src="/javascript/scanUtil.js"></script>
+<style>
+  
+  .row{
+    display:flex;
+    flex-direction: column;
+    {{!-- background-color: rgb(189, 76, 212); --}}
+  }
+</style>
+<div class="row">
+  <div class="col">
+    <div style="width:100%;" id="reader"></div>
+  </div>
+  
+  <div class="col" style="padding:30px;">
+    <h4>SCAN RESULT</h4>
+    <div id="result">Result Here</div>
+  </div>
+</div>
+<script type="text/javascript">
+function onScanSuccess(qrCodeMessage) {
+    document.getElementById('result').innerHTML = '<span class="result">'+qrCodeMessage+'</span>';
+}
+function onScanError(errorMessage) {
+  //handle scan error
+}
+var html5QrcodeScanner = new Html5QrcodeScanner(
+    "reader", { fps: 10, qrbox: 250 });
+html5QrcodeScanner.render(onScanSuccess, onScanError);
+</script>

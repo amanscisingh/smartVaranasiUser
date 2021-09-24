@@ -1,0 +1,74 @@
+<h3 style="padding: 6px; margin: 0px; text-align: center; background-color: black; color: white; font-weight: bolder;">
+    Varanasi Waste Management</h3>
+<div style="padding-top: 30px; text-align:center">
+
+        <span style=" margin-top: 10px; padding: 5px; border: black 1px solid; cursor: pointer; background-color:antiquewhite">
+            <a style="color: black; text-decoration: none" href="/admin/tasks" id="taskBtn">Assign task Panel</a>
+        </span>
+         
+    </div>
+        
+    <img id="animateImg" style="width: 70%; margin-left: 15%; margin-top: 16%; height: auto;" src="/images/wastePoster.jpg" alt="Waste Tips">
+
+<div id="homeBottom">
+    <hr>
+    <div style="text-align: center;"><a style="color: black; text-decoration: none" href="#">👇Recent Broadcasts👇</a>
+    </div>
+</div>
+
+<script>
+    const homeBottom = document.getElementById('homeBottom');
+    const ul = document.createElement('ul');
+    fetch('/api/topBroadcasts').then(res => res.json()).then(data => {
+        a = data[0];
+        b = data[1];
+        c = data[2];
+        var li1 = document.createElement('li');
+        li1.innerHTML = c.title;
+        li1.addEventListener('click', () => {
+            if (li1.innerHTML === c.title) {
+                li1.innerHTML = c.title + `<br>` + c.description;
+                li1.style.border = "1px solid black";
+                li1.style.margin = "0px 5px 0px 0px";
+            }
+            else {
+                li1.innerHTML = c.title;
+                li1.style.border = "none";
+            }
+        })
+        var li2 = document.createElement('li');
+        li2.innerHTML = b.title;
+        li2.addEventListener('click', () => {
+            if (li2.innerHTML === b.title) {
+                li2.innerHTML = b.title + `<br>` + b.description;
+                li2.style.border = "1px solid black";
+                li2.style.margin = "0px 5px 0px 0px";
+            }
+            else {
+                li2.innerHTML = b.title;
+                li2.style.border = "none";
+            }
+        })
+        var li3 = document.createElement('li');
+        li3.innerHTML = a.title;
+        li3.addEventListener('click', () => {
+            if (li3.innerHTML === a.title) {
+                li3.innerHTML = a.title + `<br>` + a.description;
+                li3.style.border = "1px solid black";
+                li3.style.margin = "0px 5px 0px 0px";
+            }
+            else {
+                li3.innerHTML = a.title;
+                li3.style.border = "none";
+            }
+        })
+        ul.appendChild(li1);
+        ul.appendChild(li2);
+        ul.appendChild(li3);
+        homeBottom.appendChild(ul);
+    });
+
+
+
+
+</script>

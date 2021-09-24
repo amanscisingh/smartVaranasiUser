@@ -1,0 +1,30 @@
+<div style="margin-top: 85%; text-align: -webkit-center;"  class="login-container" style="text-align: center;">
+    <div class="userSignIn">Sign in as an <span style="color: white; background-color: black; padding: 3px;">Admin</span></div>
+    <div style="padding: 15px;" class="g-signin2" data-onsuccess="onSignIn"></div>
+</div>
+
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script>
+    function onSignIn(googleUser) {
+        var id_token = googleUser.getAuthResponse().id_token;
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/auth/login');
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = function() {
+            console.log('Signed in as: ' + xhr.responseText);
+            if (xhr.responseText == 'success') {
+                // signOut();
+                location.assign('/home');
+            };
+        };
+        xhr.send(JSON.stringify({ token: id_token }));
+    }
+
+    function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+        console.log('User signed out.');
+        });
+    }
+</script>
