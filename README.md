@@ -1,7 +1,7 @@
 # smartVaranasiUser
 Admin, Employee and User Web-Apps for the solution of waste-management of varanasi.
 
-Please swwitch to the following branches
+Please switch to the following branches
 1. admin
 2. employee
 3. user
